@@ -1,0 +1,7 @@
+# Good Feet Review Analysis and Classification Log
+--- 
+
+5/15/2022
+I started this project as a way to keep up my machine learning skills and to generate independent projects for a work related portfolio.
+Utilized Outscraper to scrape the raw review data from Google Reviews.
+Deleted variables not relevant to my analysis.
