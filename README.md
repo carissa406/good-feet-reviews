@@ -16,3 +16,6 @@ The purpose of this analysis is to classify reviews by their star rating given t
 - review_likes
 
 # Data Exploration and Preprocessing
+The barplot indicates that 5-star ratings are the majority of reviews indicating that Good Feet is in excellent standing with it's customers.
+
+![text](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/review_rating_table_barplot.png)
