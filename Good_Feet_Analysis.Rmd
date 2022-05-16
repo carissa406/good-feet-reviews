@@ -1,0 +1,85 @@
+---
+title: "Good Feet Review Analysis"
+output: html_notebook
+---
+
+#1. Exploratory Data Analysis and Preparation
+
+Read in the data
+```{r}
+gf = read.csv("GF_mkereviews.csv")
+str(gf)
+```
+```{r}
+summary(gf)
+```
+```{r}
+gf$review_ID = NULL
+```
+
+Randomize the order of the rows
+```{r}
+gf = gf[sample(nrow(gf), replace = FALSE),]
+```
+
+Converting rating to factor
+```{r}
+gf$review_rating = factor(gf$review_rating)
+```
+
+```{r}
+library(RColorBrewer)
+coul <- brewer.pal(8, "Spectral") 
+```
+```{r}
+barplot(table(gf$review_rating), col=coul)
+```
+From the barplot we can see that 5 star ratings are in the majority.
+```{r}
+pie(table(gf$review_rating), col=coul)
+```
+
+
+Create a text corpus from review_text variable. Then clean the corpus, that is convert all tweets to lowercase, stem and remove stop words, punctuation, and additional white spaces. 
+```{r}
+library(tm)
+library(SnowballC)
+gf_corpus = VCorpus(VectorSource(gf$review_text))
+as.character(gf_corpus[[1]])
+```
+```{r}
+gf_corpus_clean = tm_map(gf_corpus, content_transformer(tolower))
+gf_corpus_clean = tm_map(gf_corpus_clean, removeNumbers)
+gf_corpus_clean = tm_map(gf_corpus_clean, removeWords, stopwords())
+
+replacePunctuation = function(x){
+  gsub("[[:punct:]]+", " ", x)
+}
+
+gf_corpus_clean = tm_map(gf_corpus_clean, content_transformer(replacePunctuation))
+
+gf_corpus_clean = tm_map(gf_corpus_clean, stemDocument)
+gf_corpus_clean = tm_map(gf_corpus_clean, stripWhitespace)
+as.character(gf_corpus_clean[[1]])
+```
+#2. Word Clouds For 1 Star Reviews vs 5 Star Reviews
+```{r}
+library(wordcloud)
+fivestar = subset(gf, review_rating == "5")$review_text
+onestar = subset(gf, review_rating == "1")$review_text
+```
+```{r}
+#fivestar
+wordcloud(fivestar, max.words = 100, scale = c(3, 0.5), random.order = FALSE)
+```
+```{r}
+#onestar
+wordcloud(fivestar, max.words = 100, scale = c(3, 0.5), random.order = FALSE)
+```
+
+Create a document-term matrix from the cleaned corpus. Then split the data into train and test sets. Use 80% of samples (roughly 32925 rows ) for training and the rest for testing.
+```{r}
+
+```
+
+
