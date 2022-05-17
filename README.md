@@ -5,10 +5,10 @@
 
 [Link to Outscraper](https://outscraper.com/)
 
-[Click to see my progress log](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/log)
+[Click to see my progress log](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/log.md)
 
 # Problem Definition and Goals
-The purpose of this analysis is to classify reviews by their star rating given their text review. This data was scraped from the Good Feet Milwaukee location's Google reviews page using Outscraper. The raw data was then cleaned to only contain the following variables of 121 observations:
+The purpose of this analysis is to classify reviews by their star rating given their text review using a Naive Bayes Classifier. This data was scraped from the Good Feet Milwaukee location's Google reviews page using Outscraper. The raw data was then cleaned to only contain the following variables of 121 observations:
 - review_ID
 - review_text
 - review_rating
@@ -16,6 +16,10 @@ The purpose of this analysis is to classify reviews by their star rating given t
 - review_likes
 
 # Data Exploration and Preprocessing
-The barplot indicates that 5-star ratings are the majority of reviews indicating that Good Feet is in excellent standing with it's customers.
+The distribution of the review ratings can be shown by the below barplot. To improve the accuracy of the model since we have a small amount of observations, the star ratings were combined into "good" and "bad" ratings. 4 stars and below are considered good, while 3 stars and below are considered bad for these purposes. The next figure shows the combined binary ratings.
 
 ![text](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/review_rating_table_barplot.png)
+
+![text](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/review_rating_good_bad.PNG)
+
+Before training the Naive Bayes Classifier the data was converted into a text corpus. The corpus was cleaned by converting all words to lowercase, removing all numbers, stopwords, replaceing punctuations with spaces, stemming, and striping the remaining white space. The clean corpus was then converted into a document term matrix to get the frequencies of each word. The matrix is very sparse so words that appeared less than five times were also removed. The text was then split into about 80% training and 20% testing data.
