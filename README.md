@@ -16,10 +16,16 @@ The purpose of this analysis is to classify reviews by their star rating given t
 - review_likes
 
 # Data Exploration and Preprocessing
-The distribution of the review ratings can be shown by the below barplot. To improve the accuracy of the model since we have a small amount of observations, the star ratings were combined into "good" and "bad" ratings. 4 stars and below are considered good, while 3 stars and below are considered bad for these purposes. The next figure shows the combined binary ratings.
+The distribution of the review ratings can be shown by the below barplot. To improve the accuracy of the model since we have a small amount of observations, the star ratings were combined into "good" and "bad" ratings. 4 stars and below are considered good, while 3 stars and below are considered bad for these purposes. The next figure shows the combined binary ratings. It is shown that there are much more good ratings than bad ones. 
 
-![text](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/review_rating_table_barplot.png)
+![Original_Review_Rating](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/review_rating_table_barplot.png)
 
-![text](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/review_rating_good_bad.PNG)
+![Modified_Review_Rating](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/review_rating_good_bad.PNG)
+
+I also took a look at the distribution of the dates of each review by individually plotting the year of review and month of review. It is shown that the majority of reviews were made in 2019 and the month of October in the below figures.
+
+![Review_Year](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/review_year.PNG)
+
+![Review_Month](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/review_month.PNG)
 
 Before training the Naive Bayes Classifier the data was converted into a text corpus. The corpus was cleaned by converting all words to lowercase, removing all numbers, stopwords, replaceing punctuations with spaces, stemming, and striping the remaining white space. The clean corpus was then converted into a document term matrix to get the frequencies of each word. The matrix is very sparse so words that appeared less than five times were also removed. The text was then split into about 80% training and 20% testing data.
