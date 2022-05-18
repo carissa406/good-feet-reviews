@@ -19,6 +19,7 @@ The purpose of this analysis is to classify reviews by their star rating given t
 The distribution of the review ratings can be shown by the below barplot. To improve the accuracy of the model since we have a small amount of observations, the star ratings were combined into "good" and "bad" ratings. 4 stars and below are considered good, while 3 stars and below are considered bad for these purposes. The next figure shows the combined binary ratings. It is shown that there are much more good ratings than bad ones. 
 
 ### Original Barplot of 1-5 Star Ratings
+
 ![Original_Review_Rating](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/review_rating_table_barplot.png)
 
 ### Modified "Good" and "Bad" Ratings
