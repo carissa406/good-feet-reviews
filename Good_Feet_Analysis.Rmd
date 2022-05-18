@@ -37,12 +37,14 @@ barplot(table(gf$review_rating), col=coul, main = "Review Ratings")
 ```
 Converting review_datetime_utc into a Date variable to look at the time series distribution of when reviewers write their reviews to get an idea of when people visit the store the most.
 ```{r}
-gf$review_datetime_utc = format(as.Date(gf$review_datetime_utc, format="%m/%d/%Y"), format="%Y-%m")
+gf$years = format(as.Date(gf$review_datetime_utc, format="%m/%d/%Y"), format="%Y")
+gf$months = format(as.Date(gf$review_datetime_utc, format="%m/%d/%Y"), format="%m")
 ```
 ```{r}
 library(car)
 coul <- brewer.pal(9, "YlGnBu")
-barplot(table(gf$review_datetime_utc), col=coul, main="Review Date", las=2)
+barplot(table(gf$years), col=coul, main="Review Date - Year", las=2)
+barplot(table(gf$months), col=coul, main="Review Date - Month", las=2)
 ```
 
 
@@ -71,16 +73,16 @@ as.character(gf_corpus_clean[[1]])
 #2. Word Clouds For 1 Star Reviews vs 5 Star Reviews
 ```{r}
 library(wordcloud)
-fivestar = subset(gf, review_rating == "5")$review_text
-onestar = subset(gf, review_rating == "1")$review_text
+good = subset(gf, review_rating == "Good")$review_text
+bad = subset(gf, review_rating == "Bad")$review_text
 ```
 ```{r}
-#fivestar
-wordcloud(fivestar, max.words = 100, scale = c(3, 0.5), random.order = FALSE)
+#good
+wordcloud(good, max.words = 100, scale = c(3, 0.5), random.order = FALSE)
 ```
 ```{r}
-#onestar
-wordcloud(fivestar, max.words = 100, scale = c(3, 0.5), random.order = FALSE)
+#bad
+wordcloud(bad, max.words = 100, scale = c(3, 0.5), random.order = FALSE)
 ```
 # 3. Document Term Matrix and Training/Test sets
 
@@ -135,10 +137,4 @@ library(gmodels)
 CrossTable(gf_test_pred, gf_test_labels, prop.chisq = FALSE, prop.t = FALSE, dnn = c('predicted', 'actual'))
 ```
 Our results indicate that the classifier predicted 
-* 1-stars: 25% accuracy
-* 2-stars: 50% accuracy
-* 3-stars: 0% accuracy
-* 4-stars: 66.7% accuracy
-* 5-stars: 35.7% accuracy
 
-* total error rate: 64%
