@@ -12,3 +12,9 @@
 * Trained the Naive Bayes Classifier
 * The classifier had a 64% error rate which is too high for my liking. I think I will instead try to combine 4 and 5 star ratings as "good" and 1, 2, and 3 star ratings as bad. 
 * I want to utilize the other variables in the data by finding a way to visualize the review dates
+
+5/18/2022
+* I visualized the review dates by splitting up the years and months and plotting them individually
+* I added the wordclouds to the readme file
+* Added inital crosstable results of my naive bayes model
+* I should do cross validation using smote next
