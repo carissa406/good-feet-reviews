@@ -7,6 +7,8 @@
 
 [Click to see my progress log](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/log.md)
 
+[Click to see my code](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/Good_Feet_Analysis.Rmd)
+
 # Problem Definition and Goals
 The purpose of this analysis is to classify reviews by their star rating given their text review using a Naive Bayes Classifier. This data was scraped from the Good Feet Milwaukee location's Google reviews page using Outscraper. The raw data was then cleaned to only contain the following variables of 121 observations:
 - review_ID
