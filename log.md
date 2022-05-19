@@ -15,6 +15,9 @@
 
 5/18/2022
 * I visualized the review dates by splitting up the years and months and plotting them individually
-* I added the wordclouds to the readme file
+* I added the wordclouds
 * Added inital crosstable results of my naive bayes model
-* I should do cross validation using smote next
+
+5/19/2022
+* Used 10 fold cross validation on my model using the caret package
+* Calculated the ROC instead of Accuracy since the target class is imbalanced
