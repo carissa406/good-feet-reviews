@@ -90,11 +90,11 @@ Create a document-term matrix from the cleaned corpus. Then split the data into 
 ```{r}
 gf_dtm = DocumentTermMatrix(gf_corpus_clean)
 
-gf_dtm_train = gf_dtm[1:96, ]
-gf_dtm_test = gf_dtm[97:121, ]
+gf_dtm_train = gf_dtm[1:72, ]
+gf_dtm_test = gf_dtm[73:121, ]
 
-gf_train_labels = gf[1:96, ]$review_rating
-gf_test_labels = gf[97:121, ]$review_rating
+gf_train_labels = gf[1:72, ]$review_rating
+gf_test_labels = gf[73:121, ]$review_rating
 ```
 
 ```{r}
@@ -134,5 +134,18 @@ model
 ```{r message=FALSE, warning=FALSE}
 table(predict(model$finalModel, gf_test)$class, gf_test_labels)
 ```
+```{r warning=FALSE}
+library(ROCR)
+gf_predictions_prob=predict(model, gf_test, type = "prob")
+head(gf_predictions_prob)
+```
+```{r}
+pred_yes_gf = prediction(gf_predictions_prob$Good, gf_test_labels)
+```
+```{r}
+performance(pred_yes_gf, measure = "auc")@y.values
+```
+
+
 
 
