@@ -123,22 +123,10 @@ convert_counts)
 
 # 4. Naive Bayes Classifier
 
-```{r}
-library(e1071)
-gf_classifier = naiveBayes(gf_train, gf_train_labels)
-```
-Predicting on the test data
-```{r}
-gf_test_pred = predict(gf_classifier, gf_test)
-```
-
-```{r}
-library(gmodels)
-CrossTable(gf_test_pred, gf_test_labels, prop.chisq = FALSE, prop.t = FALSE, dnn = c('predicted', 'actual'))
-```
 ```{r warning=FALSE}
 library(caret)
-model = train(gf_train, gf_train_labels, "nb", trControl=trainControl(method="cv", number=10))
+model = train(gf_train, gf_train_labels, "nb", trControl=trainControl(method="cv", number=10, classProbs = TRUE,
+summaryFunction = twoClassSummary))
 ```
 ```{r}
 model
