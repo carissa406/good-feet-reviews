@@ -1,5 +1,5 @@
 # Good Feet Review Analysis; Star Rating Classification
- Analysis of customer reviews from the Good Feet Milwaukee store to predict review score
+ Analysis of customer reviews from the Good Feet Milwaukee store to predict review score. This is a very simple analysis using a very small amount of data to demonstrate my knowledge on machine learning. The Good Feet Store serves it's customers with custom fitted arch supports that claim to alleviate foot, knee, hip and back pain. 
 
 [Link to Google Reviews of Good Feet Milwaukee](https://www.google.com/search?q=good+feet+milwaukee&rlz=1C1ONGR_enUS943US943&oq=good+feet+milwaukee&aqs=chrome..69i57j46i175i199i512j0i22i30l3j0i390.10964j0j4&sourceid=chrome&ie=UTF-8#lrd=0x88050f83400a8a39:0x37af811d2176cae,1,,,)
 
@@ -18,7 +18,7 @@ The purpose of this analysis is to classify reviews by their star rating given t
 - review_likes
 
 # Data Exploration and Preprocessing
-The distribution of the review ratings can be shown by the below barplot. To improve the accuracy of the model since we have a small amount of observations, the star ratings were combined into "good" and "bad" ratings. 4 stars and below are considered good, while 3 stars and below are considered bad for these purposes. The next figure shows the combined binary ratings. It is shown that there are much more good ratings than bad ones. 
+The distribution of the review ratings can be shown by the below barplot. To improve the accuracy of the model since we have a small amount of observations, the star ratings were combined into "good" and "bad" ratings. It would be very difficult for the model to accurately classify the individual star ratings (such as 2-4 stars) because there is less than 10 observations in those variables and the model would be more biased towards predicting the 5-star reviews that have around 70 observations. Therefore, for this analysis, 4 stars and below are considered good, while 3 stars and below are considered bad. The next figure shows the combined binary ratings. It is shown that there are much more good ratings than bad ones. 
 
 ### Original Barplot of 1-5 Star Ratings
 
