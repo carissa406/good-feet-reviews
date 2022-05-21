@@ -60,14 +60,11 @@ According to the Better Business Bureau, this Good Feet Store location opened in
  
  # References
  
-Google Reviews of the Good Feet Store
-https://www.google.com/search?q=good+feet+milwaukee&rlz=1C1ONGR_enUS943US943&oq=good+feet+milwaukee&aqs=chrome..69i57j46i175i199i512j0i22i30l3j0i390.10964j0j4&sourceid=chrome&ie=UTF-8#lrd=0x88050f83400a8a39:0x37af811d2176cae,1,,,
+[Google Reviews of the Good Feet Store](https://www.google.com/search?q=good+feet+milwaukee&rlz=1C1ONGR_enUS943US943&oq=good+feet+milwaukee&aqs=chrome..69i57j46i175i199i512j0i22i30l3j0i390.10964j0j4&sourceid=chrome&ie=UTF-8#lrd=0x88050f83400a8a39:0x37af811d2176cae,1,,,)
 
-Outscraper: Online web scraping tool used to extract review data
-https://outscraper.com/
+[Outscraper: Online web scraping tool used to extract review data](https://outscraper.com/)
 
-Better Business Bureau profile of the Good Feet Store
-https://www.bbb.org/us/wi/wauwatosa/profile/orthopedic-shoes/good-feet-store-0694-4024315
+[Better Business Bureau profile of the Good Feet Store](https://www.bbb.org/us/wi/wauwatosa/profile/orthopedic-shoes/good-feet-store-0694-4024315)
 
 
 
