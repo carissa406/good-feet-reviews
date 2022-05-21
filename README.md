@@ -47,6 +47,11 @@ Before training the Naive Bayes Classifier the data was converted into a text co
 
 # Data Analysis and Experimental Results
 
-The data was trained using a Naive Bayes Classifier. Below are the initial results:
+The data was trained using a Naive Bayes Classifier. Below are the initial results before using 10-fold cross validation and with 80/20 training/test data. This model did not do as well with predicting Bad reviews: 
 
 ![Initial Results CrossTable](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/crosstab_results.PNG)
+
+Below are the results of the final model using 10-fold cross validation evaluated with ROC. We can see that this model did a better job at classifying bad reviews. 
+
+![Final Model]()
+![Final_CrossTable]()
