@@ -7,6 +7,8 @@
 
 [Click to see my progress log](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/log.md)
 
+[Click to see my code](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/Good_Feet_Analysis.Rmd)
+
 # Problem Definition and Goals
 The purpose of this analysis is to classify reviews by their star rating given their text review using a Naive Bayes Classifier. This data was scraped from the Good Feet Milwaukee location's Google reviews page using Outscraper. The raw data was then cleaned to only contain the following variables of 121 observations:
 - review_ID
@@ -18,14 +20,33 @@ The purpose of this analysis is to classify reviews by their star rating given t
 # Data Exploration and Preprocessing
 The distribution of the review ratings can be shown by the below barplot. To improve the accuracy of the model since we have a small amount of observations, the star ratings were combined into "good" and "bad" ratings. 4 stars and below are considered good, while 3 stars and below are considered bad for these purposes. The next figure shows the combined binary ratings. It is shown that there are much more good ratings than bad ones. 
 
+### Original Barplot of 1-5 Star Ratings
+
 ![Original_Review_Rating](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/review_rating_table_barplot.png)
 
+### Modified "Good" and "Bad" Ratings
 ![Modified_Review_Rating](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/review_rating_good_bad.PNG)
 
 I also took a look at the distribution of the dates of each review by individually plotting the year of review and month of review. It is shown that the majority of reviews were made in 2019 and the month of October in the below figures.
 
+### Review Years
 ![Review_Year](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/review_year.PNG)
 
+### Review Months
 ![Review_Month](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/review_month.PNG)
 
+Next the good and bad review frequent words were visualized using the WordCloud package. 
+
+### Good Reviews WordCloud
+![Good Reviews WordCloud](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/good_wordcloud.PNG)
+
+### Bad Reviews WordCloud
+![Bad Reviews WordCloud](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/bad_wordcloud.PNG)
+
 Before training the Naive Bayes Classifier the data was converted into a text corpus. The corpus was cleaned by converting all words to lowercase, removing all numbers, stopwords, replaceing punctuations with spaces, stemming, and striping the remaining white space. The clean corpus was then converted into a document term matrix to get the frequencies of each word. The matrix is very sparse so words that appeared less than five times were also removed. The text was then split into about 80% training and 20% testing data.
+
+# Data Analysis and Experimental Results
+
+The data was trained using a Naive Bayes Classifier. Below are the initial results:
+
+![Initial Results CrossTable](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/crosstab_results.PNG)
