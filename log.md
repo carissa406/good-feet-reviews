@@ -21,3 +21,6 @@
 5/19/2022
 * Used 10 fold cross validation on my model using the caret package
 * Calculated the ROC instead of Accuracy since the target class is imbalanced
+
+5/21/2022
+* I changed the test and training data to about 60/40
