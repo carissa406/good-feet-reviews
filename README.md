@@ -53,5 +53,5 @@ The data was trained using a Naive Bayes Classifier. Below are the initial resul
 
 Below are the results of the final model using 10-fold cross validation evaluated with ROC. We can see that this model did a better job at classifying bad reviews. 
 
-![Final Model]()
-![Final_CrossTable]()
+![Final Model](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/nb_results_cv.PNG)
+![Final_CrossTable](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/gf_test_labels_results.PNG)
