@@ -43,7 +43,7 @@ Next the good and bad review frequent words were visualized using the WordCloud 
 ### Bad Reviews WordCloud
 ![Bad Reviews WordCloud](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/bad_wordcloud.PNG)
 
-Before training the Naive Bayes Classifier the data was converted into a text corpus. The corpus was cleaned by converting all words to lowercase, removing all numbers, stopwords, replaceing punctuations with spaces, stemming, and striping the remaining white space. The clean corpus was then converted into a document term matrix to get the frequencies of each word. The matrix is very sparse so words that appeared less than five times were also removed. The text was then split into about 80% training and 20% testing data.
+Before training the Naive Bayes Classifier the data was converted into a text corpus. The corpus was cleaned by converting all words to lowercase, removing all numbers, stopwords, replacing punctuations with spaces, stemming, and striping the remaining white space. The clean corpus was then converted into a document term matrix to get the frequencies of each word. The matrix is very sparse so words that appeared less than five times were also removed. The text was then split into about 80% training and 20% testing data initially, then into 60% and 40% to view any changes. We obtained the best model using 10-fold cross validation and evaluted using AUC/ROC. 
 
 # Data Analysis and Experimental Results
 
