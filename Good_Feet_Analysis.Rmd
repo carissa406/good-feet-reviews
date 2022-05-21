@@ -136,5 +136,15 @@ gf_test_pred = predict(gf_classifier, gf_test)
 library(gmodels)
 CrossTable(gf_test_pred, gf_test_labels, prop.chisq = FALSE, prop.t = FALSE, dnn = c('predicted', 'actual'))
 ```
-Our results indicate that the classifier predicted 
+```{r warning=FALSE}
+library(caret)
+model = train(gf_train, gf_train_labels, "nb", trControl=trainControl(method="cv", number=10))
+```
+```{r}
+model
+```
+```{r message=FALSE, warning=FALSE}
+table(predict(model$finalModel, gf_test)$class, gf_test_labels)
+```
+
 
