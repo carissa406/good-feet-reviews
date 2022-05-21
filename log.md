@@ -24,3 +24,5 @@
 
 5/21/2022
 * I changed the test and training data to about 60/40
+* Ran tests on the final model and obtained AUC
+* Wrote conclusion
