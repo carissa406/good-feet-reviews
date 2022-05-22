@@ -47,13 +47,11 @@ The data was trained using a Naive Bayes Classifier using the caret package. Bel
 
 ![Initial Results CrossTable](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/Visualizations/crosstab_results.PNG)
 
-Below are the results of the final model using 60/40 training/testing data and using 10-fold cross validation evaluated with ROC. We can see that this model did a better job at classifying bad reviews. The AUC of this model came to be 0.706 which was calculated using the ROCR package.
+Below are the results of the final model using 60/40 training/testing data and using 10-fold cross validation evaluated with ROC. We can see that this model did a better job at classifying bad reviews. The AUC of this model came to be 0.706 which was calculated using the ROCR package. Meaning that there is about a 70% chance that this model will accurately distinguish between good and bad reviews.
 
 ![Final Model](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/Visualizations/nb_results_cv.PNG)
 ![Final_CrossTable](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/Visualizations/gf_test_labels_results.PNG)
 
- Meaning that there is about a 70% chance that this model will accurately distinguish between good and bad reviews.
- 
  # Conclusion
  
 According to the Better Business Bureau, this Good Feet Store location opened in 2001 with reviews starting on Google in 2013. The majority of ratings on Google were 5-star reviews with most dates in 2019. For this analysis, 1 through 3 star ratings were grouped as bad, and 4 to 5 star ratings were good. A Naive Bayes binary classification model was trained using 60% of the data, with the last 40% for testing. 10 fold cross validation was used to find the best model which was able to classify the correct review rating about 70% of the time. The accuracy of the model could be improved by using a larger dataset with a bigger distribution of balanced ratings. 
