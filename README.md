@@ -1,8 +1,6 @@
 # Good Feet Review Analysis using Naive Bayes Classification
  Analysis of customer reviews from the Good Feet Milwaukee store to predict review score. This is a very simple analysis using a very small amount of data to demonstrate my knowledge on machine learning. The Good Feet Store serves it's customers with custom fitted arch supports, shoe inserts, and a small selection of shoes that claim to alleviate foot, knee, hip and back pain. Their average rating on Google Reviews is a 3.9.
  
-[Click to see my progress log](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/Visualizations/log.md)
-
 [Click to see my code](https://github.com/carissa406/Good-Feet-Review-Analysis/blob/main/Visualizations/Good_Feet_Analysis.Rmd)
 
 # Problem Definition and Goals
