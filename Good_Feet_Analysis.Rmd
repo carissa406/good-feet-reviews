@@ -84,6 +84,18 @@ wordcloud(good, max.words = 100, scale = c(3, 0.5), random.order = FALSE)
 #bad
 wordcloud(bad, max.words = 100, scale = c(3, 0.5), random.order = FALSE)
 ```
+
+```{r}
+myTdm = as.matrix(TermDocumentMatrix(gf_corpus_clean))
+FreqMat = data.frame(ST = rownames(myTdm), 
+                     Freq = rowSums(myTdm),
+                     row.names=NULL)
+#head(FreqMat)
+ordered_freq = FreqMat[order(-FreqMat$Freq),]
+ordered_freq
+```
+
+
 # 3. Document Term Matrix and Training/Test sets
 
 Create a document-term matrix from the cleaned corpus. Then split the data into train and test sets. Use 80% of samples for training and the rest for testing.
